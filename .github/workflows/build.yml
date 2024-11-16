@@ -33,7 +33,7 @@ jobs:
       - name: West Zephyr export
         run: west zephyr-export
       - name: West Build
-        run: west build -b seeeduino_xiao_ble -- -DSHIELD=custom
+        run: west build -s zmk/app -b seeeduino_xiao_ble -- -DSHIELD=custom -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: Upload firmware
         uses: actions/upload-artifact@v4
         with:
