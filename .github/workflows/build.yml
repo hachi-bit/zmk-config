@@ -9,9 +9,9 @@ jobs:
       image: zmkfirmware/zmk-build-arm:stable
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Cache west modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         env:
           cache-name: cache-zephyr-modules
         with:
@@ -35,7 +35,7 @@ jobs:
       - name: West Build
         run: west build -b seeeduino_xiao_ble -- -DSHIELD=custom
       - name: Upload firmware
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: firmware
           path: build/zephyr/zmk.uf2
