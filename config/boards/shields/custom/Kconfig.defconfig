@@ -1,0 +1,6 @@
+if SHIELD_CUSTOM
+
+config ZMK_KEYBOARD_NAME
+    default "Custom Mouse"
+
+endif
